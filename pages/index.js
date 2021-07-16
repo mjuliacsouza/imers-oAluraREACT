@@ -1,24 +1,24 @@
 import MainGrid from '../src/components/MainGrid'
 import Box from '../src/components/Box'
-import { AlurakutMenu, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons'
-import { ProfileRelationsBoxWrapper } from '../src/components/ProfileRelations'
+import { AlurakutMenu, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons';
+import { ProfileRelationsBoxWrapper } from '../src/components/ProfileRelations';
 
-function ProfileSideBar(propriedades) {
+function ProfileSidebar(propriedades) {
+  console.log(propriedades);
   return (
     <Box>
-      <img src={`https://github.com/${propriedades.githubUser}.png`} style={{ borderRadius: '8px' }} /> 
+      <img src={`https://github.com/${propriedades.githubUser}.png`} style={{ borderRadius: '8px' }} />
     </Box>
   )
 }
 
 export default function Home() {
-  const githubUser = 'mjuliacsouza';
-
+  const usuarioAleatorio = 'omariosouto';
   const pessoasFavoritas = [
-    'juunegreiros', 
-    'mariosouto', 
-    'peas', 
-    'rafaballerini', 
+    'juunegreiros',
+    'omariosouto',
+    'peas',
+    'rafaballerini',
     'marcobrunodev',
     'felipefialho'
   ]
@@ -27,35 +27,34 @@ export default function Home() {
     <>
       <AlurakutMenu />
       <MainGrid>
+        {/* <Box style="grid-area: profileArea;"> */}
         <div className="profileArea" style={{ gridArea: 'profileArea' }}>
-          <ProfileSideBar githubUser={githubUser}/>
+          <ProfileSidebar githubUser={usuarioAleatorio} />
         </div>
-        
         <div className="welcomeArea" style={{ gridArea: 'welcomeArea' }}>
           <Box>
             <h1 className="title">
-            Bem-vinde
+              Bem vindo(a) 
             </h1>
 
             <OrkutNostalgicIconSet />
           </Box>
         </div>
-        
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
           <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
-              Pessoas da comunidade ({pessoasFavoritas.length}):
+              Pessoas da comunidade ({pessoasFavoritas.length})
             </h2>
 
             <ul>
               {pessoasFavoritas.map((itemAtual) => {
                 return (
-                <li>
-                  <a href={`/users/${itemAtual}`} key={itemAtual} >
-                    <img src={`https://github.com/${itemAtual}.png`} />
-                    <span>{itemAtual}</span>
-                  </a>  
-                </li>
+                  <li>
+                    <a href={`/users/${itemAtual}`} key={itemAtual}>
+                      <img src={`https://github.com/${itemAtual}.png`} />
+                      <span>{itemAtual}</span>
+                    </a>
+                  </li>
                 )
               })}
             </ul>
