@@ -13,7 +13,7 @@ function ProfileSidebar(propriedades) {
 }
 
 export default function Home() {
-  const usuarioAleatorio = 'omariosouto';
+  const usuarioAleatorio = 'mjuliacsouza';
   const pessoasFavoritas = [
     'juunegreiros',
     'omariosouto',
@@ -34,7 +34,7 @@ export default function Home() {
         <div className="welcomeArea" style={{ gridArea: 'welcomeArea' }}>
           <Box>
             <h1 className="title">
-              Bem vindo(a) 
+              Bem vinde 
             </h1>
 
             <OrkutNostalgicIconSet />
